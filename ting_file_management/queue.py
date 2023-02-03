@@ -17,8 +17,7 @@ class Queue(AbstractQueue):
         return self.queue.pop(0)
 
     def search(self, index):
-        if not self.queue[index]:
+        try:
+            return self.queue[index]
+        except IndexError:
             raise IndexError
-        
-        return self.queue[index]
-    
